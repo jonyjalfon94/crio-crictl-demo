@@ -53,13 +53,13 @@ crio version
 * First we will create a pod, to do so we need to provide crictl a pod creation request. This is a .json or .yaml file. Use the simple-sandbox.yaml from this repo to create a Pod.
 
 ```
-SANDBOX_ID=$(sudo crictl runp simple-sandbox.yaml)
+SANDBOX_ID=$(sudo crictl runp ./samples/simple-sandbox.yaml)
 ```
 
 * In this demo we are going to deploy an nginx container. We will use an exaple container creation request to create a container inside the pod that we just created.
 
 ```
-CONTAINER_ID=$(sudo crictl create ${SANDBOX_ID} nginx.yaml simple-sandbox.yaml)
+CONTAINER_ID=$(sudo crictl create ${SANDBOX_ID} ./samples/nginx.yaml ./samples/simple-sandbox.yaml)
 ```
 
 * Then we can start the container by running
