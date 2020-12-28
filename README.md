@@ -37,15 +37,23 @@ sudo crictl version
 crio version
 ```
 
+* Use the info command to get information about the container runtime
+
+```
+sudo crictl info
+```
+
 ## Considerations for this demo
 
 * The cri-o container runtime is an implementation of the kubernetes CRI and as such it only has the functions defined in the interface.
 
 * crictl is a debugging tool for the CRI. It is not supposed to be used to run containers or pods but it is capable of doing so.
 
-* Pods and containers created using crictl will be erased eventually by the kubelet.
+* Using crictl to create a container is useful for debugging container runtimes. On a running Kubernetes cluster, the sandbox/pod will eventually be stopped and deleted by the Kubelet.
 
-* In this demo we are creating pods and containers using crictl but in reality when running in a kubernetes cluster those actions will be done by the kubelet.
+* In this demo we are creating pods and containers using crictl but in reality when running in a kubernetes cluster those actions will be done by the kubelet and after configuring cri-o as the container runtime for the cluster there is no need to use it directly.
+
+* Crictl can interact with any CRI compliant container runtime such as containerd, cri-o and docker (dockershim).
 
 
 

@@ -18,7 +18,9 @@ sudo crictl inspecti docker.io/library/nginx
 sudo crictl imagefsinfo docker.io/library/nginx
 ```
 
-* Use rmi like in Docker to remove an image
+### Cleanup
+
+* Use rmi to remove an image
 
 ```
 sudo crictl rmi docker.io/library/nginx
