@@ -35,7 +35,7 @@ sudo curl -LO https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.
 
 sudo tar -zxvf crictl-v1.19.0-linux-amd64.tar.gz -C /usr/bin
 
-rm -f crictl-1.19.0-linux-amd64.tar.gz
+rm -f crictl-v1.19.0-linux-amd64.tar.gz
 ```
 
 * Check everything was installed succesfully by running the following commands
