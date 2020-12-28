@@ -1,5 +1,11 @@
 ## Images
 
+* Pull an image using the pull command
+
+```
+sudo crictl pull nginx
+```
+
 * We can use crictl to see the images that are stored locally
 
 ```
