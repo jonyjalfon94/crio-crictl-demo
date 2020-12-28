@@ -18,7 +18,7 @@ sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable:cri-o:$VERSION
 sudo yum install cri-o
 ```
 
-* After cri-o is install we must enable and start the service.
+* After cri-o is installed we can enable and start the service.
 
 ```
 sudo systemctl enable crio
