@@ -15,7 +15,15 @@ sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo https://d
 
 sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$VERSION/$OS/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo
 
-yum install cri-o
+sudo yum install cri-o
+```
+
+* After cri-o is install we must enable and start the service.
+
+```
+sudo systemctl enable crio
+sudo systemctl start crio
+sudo systemctl status crio
 ```
 
 ### Install crictl
@@ -25,7 +33,7 @@ yum install cri-o
 ```
 sudo curl -LO https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.19.0/crictl-v1.19.0-linux-amd64.tar.gz
 
-sudo tar -zxvf crictl-1.19.0-linux-amd64.tar.gz -C /usr/local/bin
+sudo tar -zxvf crictl-v1.19.0-linux-amd64.tar.gz -C /usr/bin
 
 rm -f crictl-1.19.0-linux-amd64.tar.gz
 ```
